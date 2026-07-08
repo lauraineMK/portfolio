@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #111a15;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Charte graphique - section 4.5 du cahier des charges */
+  --color-encre: #111a15;
+  --color-emeraude: #00a876;
+  --color-emeraude-fonce: #0b7a5c;
+  --color-or: #ffc93c;
+  --color-ivoire: #f7f6f1;
+  --color-vert-encre: #0b2e22;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
