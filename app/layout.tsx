@@ -1,20 +1,29 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Inter, IBM_Plex_Mono } from "next/font/google";
+import { profil } from "@/data/profile";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Charte graphique 4.5 : serif d'affichage (titres et nom), sans-serif (corps), monospace (libellés techniques)
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
   subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
   title: "Lauraine Moukoko — Portfolio",
-  description: "Portfolio d'ingénieure Réseaux et Sécurité — Lauraine Moukoko",
+  description: profil.accroche,
 };
 
 export default function RootLayout({
@@ -24,8 +33,8 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      lang="fr"
+      className={`${fraunces.variable} ${inter.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

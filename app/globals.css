@@ -8,8 +8,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-fraunces);
+  --font-mono: var(--font-plex-mono);
 
   /* Charte graphique - section 4.5 du cahier des charges */
   --color-encre: #111a15;
@@ -18,10 +19,19 @@
   --color-or: #ffc93c;
   --color-ivoire: #f7f6f1;
   --color-vert-encre: #0b2e22;
+
+  /* Bandeau défilant des technologies (F9 : une seule fois rapide, respecte prefers-reduced-motion) */
+  --animate-marquee: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
