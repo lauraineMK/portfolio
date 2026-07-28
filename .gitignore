@@ -36,8 +36,8 @@ yarn-error.log*
 # vercel
 .vercel
 
-# claude code (config locale à l'environnement)
-.claude/settings.local.json
+# config locale de l'environnement de développement
+.claude/
 
 # typescript
 *.tsbuildinfo
